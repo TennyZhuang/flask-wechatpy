@@ -74,6 +74,8 @@ class Wechat(object):
             app.extensions = {}
         app.extensions['wechatpy'] = self
 
+        self.app = app
+
     def __getattr__(self, name):
         return getattr(self._wechat_client, name)
 
